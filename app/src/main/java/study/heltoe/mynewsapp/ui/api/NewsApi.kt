@@ -3,7 +3,7 @@ package study.heltoe.mynewsapp.ui.api
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
-import study.heltoe.mynewsapp.ui.NewsResponse
+import study.heltoe.mynewsapp.ui.models.NewsResponse
 import study.heltoe.mynewsapp.ui.util.Constants.Companion.API_KEY
 
 interface NewsApi {

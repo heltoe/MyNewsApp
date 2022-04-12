@@ -1,4 +1,4 @@
-package study.heltoe.mynewsapp.ui
+package study.heltoe.mynewsapp.ui.models
 
 data class Source(
     val id: String,
