@@ -1,5 +1,6 @@
 package study.heltoe.mynewsapp.ui.adapters
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.AsyncListDiffer
@@ -9,8 +10,8 @@ import com.bumptech.glide.Glide
 import study.heltoe.mynewsapp.databinding.ItemArticlePreviewBinding
 import study.heltoe.mynewsapp.ui.models.Article
 
-class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArcticleViewHolder>() {
-    inner class ArcticleViewHolder(val binding: ItemArticlePreviewBinding) :
+class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArticleViewHolder>() {
+    inner class ArticleViewHolder(val binding: ItemArticlePreviewBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     private val differCallBack = object : DiffUtil.ItemCallback<Article>() {
@@ -23,17 +24,17 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ArcticleViewHolder>() {
         }
     }
 
-    private val differ = AsyncListDiffer(this, differCallBack)
+    val differ = AsyncListDiffer(this, differCallBack)
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArcticleViewHolder {
-        return ArcticleViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleViewHolder {
+        return ArticleViewHolder(
             ItemArticlePreviewBinding.inflate(
                 LayoutInflater.from(parent.context), parent, false
             )
         )
     }
 
-    override fun onBindViewHolder(holder: ArcticleViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ArticleViewHolder, position: Int) {
         val article = differ.currentList[position]
         holder.itemView.apply {
             Glide.with(this).load(article.urlToImage).into(holder.binding.ivArticleImage)
