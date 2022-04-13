@@ -16,6 +16,7 @@ import study.heltoe.mynewsapp.databinding.FragmentBreakingNewsBinding
 import study.heltoe.mynewsapp.ui.MainActivity
 import study.heltoe.mynewsapp.ui.NewsViewModel
 import study.heltoe.mynewsapp.ui.adapters.NewsAdapter
+import study.heltoe.mynewsapp.ui.util.Constants.Companion.COUNTRY_CODE
 import study.heltoe.mynewsapp.ui.util.Constants.Companion.QUERY_PAGE_SIZE
 import study.heltoe.mynewsapp.ui.util.Resource
 
@@ -103,7 +104,7 @@ class BreakingNewsFragment : Fragment() {
     var isLastPage = false
     var isScrolling = false
 
-    val scrollListener = object : RecyclerView.OnScrollListener() {
+    private val scrollListener = object : RecyclerView.OnScrollListener() {
         override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
             super.onScrollStateChanged(recyclerView, newState)
             if (newState === AbsListView.OnScrollListener.SCROLL_STATE_TOUCH_SCROLL) {
@@ -126,7 +127,7 @@ class BreakingNewsFragment : Fragment() {
                 isNotLoadingAndNotLastPage && isAtLastItem && isNotAtBeginning && isTotalMoreThanVisible && isScrolling
 
             if (shouldPaginate) {
-                viewModel.getBreakingNews("us")
+                viewModel.getBreakingNews(COUNTRY_CODE)
                 isScrolling = false
             }
         }

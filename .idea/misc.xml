@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/android/MyNewsApp/app/src/main/res/layout/activity_main.xml" value="0.11302083333333333" />
+        <entry key="..\:/android/MyNewsApp/app/src/main/res/layout/fragment_article.xml" value="0.10572916666666667" />
         <entry key="..\:/android/MyNewsApp/app/src/main/res/layout/fragment_breaking_news.xml" value="0.18432971014492755" />
         <entry key="..\:/android/MyNewsApp/app/src/main/res/layout/fragment_search_news.xml" value="0.13496376811594202" />
         <entry key="..\:/android/MyNewsApp/app/src/main/res/layout/item_article_preview.xml" value="0.10572916666666667" />

@@ -14,6 +14,7 @@ import retrofit2.Response
 import study.heltoe.mynewsapp.ui.models.Article
 import study.heltoe.mynewsapp.ui.models.NewsResponse
 import study.heltoe.mynewsapp.ui.repository.NewsRepository
+import study.heltoe.mynewsapp.ui.util.Constants
 import study.heltoe.mynewsapp.ui.util.Resource
 import java.io.IOException
 
@@ -30,7 +31,7 @@ class NewsViewModel(
     var searchNewsResponse: NewsResponse? = null
 
     init {
-        getBreakingNews("ru")
+        getBreakingNews(Constants.COUNTRY_CODE)
     }
 
     fun getBreakingNews(countryCode: String) = viewModelScope.launch {
