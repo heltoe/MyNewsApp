@@ -5,7 +5,7 @@ import androidx.room.*
 import study.heltoe.mynewsapp.ui.models.Article
 
 @Dao
-interface ArcticleDao {
+interface ArticleDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsert (article: Article): Long
 

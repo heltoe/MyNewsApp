@@ -10,7 +10,7 @@ import study.heltoe.mynewsapp.ui.models.Article
 )
 @TypeConverters(Converters::class)
 abstract class ArticleDataBase : RoomDatabase() {
-    abstract fun getArticleDao(): ArcticleDao
+    abstract fun getArticleDao(): ArticleDao
 
     companion object {
         @Volatile
