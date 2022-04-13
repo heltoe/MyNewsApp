@@ -2,13 +2,11 @@ package study.heltoe.mynewsapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import study.heltoe.mynewsapp.R
 import study.heltoe.mynewsapp.databinding.ActivityMainBinding
-import study.heltoe.mynewsapp.databinding.FragmentBreakingNewsBinding
 import study.heltoe.mynewsapp.ui.db.ArticleDataBase
 import study.heltoe.mynewsapp.ui.repository.NewsRepository
 
@@ -25,7 +23,7 @@ class MainActivity : AppCompatActivity() {
     }
     private fun init() {
         val newsRepository = NewsRepository(ArticleDataBase(this))
-        val viewModelProviderFactory = NewsViewModelProviderFactory(newsRepository)
+        val viewModelProviderFactory = NewsViewModelProviderFactory(application, newsRepository)
         viewModel = ViewModelProvider(this, viewModelProviderFactory).get(NewsViewModel::class.java)
         //
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.newsNavHostFragment) as NavHostFragment

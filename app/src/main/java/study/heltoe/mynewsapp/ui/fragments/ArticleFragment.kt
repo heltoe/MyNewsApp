@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import com.google.android.material.snackbar.Snackbar
@@ -15,7 +14,7 @@ import study.heltoe.mynewsapp.ui.NewsViewModel
 
 class ArticleFragment: Fragment() {
     private var _binding: FragmentArticleBinding? = null
-    val mBinding get() = _binding!!
+    private val mBinding get() = _binding!!
     lateinit var viewModel: NewsViewModel
     val args: ArticleFragmentArgs by navArgs()
 

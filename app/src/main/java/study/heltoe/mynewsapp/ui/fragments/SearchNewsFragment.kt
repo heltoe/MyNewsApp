@@ -1,13 +1,11 @@
 package study.heltoe.mynewsapp.ui.fragments
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.AbsListView
+import android.widget.Toast
 import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -32,7 +30,6 @@ class SearchNewsFragment : Fragment() {
     val mBinding get() = _binding!!
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
-    val TAG = "SearchNewsFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -92,7 +89,7 @@ class SearchNewsFragment : Fragment() {
                 is Resource.Error -> {
                     hideProgressBar()
                     response.message?.let { message ->
-                        Log.e(TAG, "An error occured: $message")
+                        Toast.makeText(activity, "An error occured: $message", Toast.LENGTH_LONG).show()
                     }
                 }
                 is Resource.Loading -> {
